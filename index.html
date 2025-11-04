@@ -3,68 +3,43 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Workcango – Detalle del servicio (match mock)</title>
+    <title>Workcango – Detalle del servicio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
-    <style>
-      :root{
-        --bg: #EEF3F9;       /* fondo principal (más azulado) */
-        --ink: #101828;
-        --muted: #667085;
-        --brand: #6B86FF;    /* azul de botones */
-        --brand-2:#7A92FF;   /* hover */
-        --chip: #2B3674;
-        --btn-ghost-bg:#E8EFFF; /* botones fantasma azul claro */
-        --btn-ghost-br:#C8D6FF;
-        --card:#FFFFFF;
-        --card-blue:#EFF4FF; /* tarjeta azul clara (vendedor) */
-        --shadow: 0 6px 18px rgba(16,24,40,.06), 0 14px 36px rgba(16,24,40,.06);
-      }
-      html,body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
-      .soft-card{ box-shadow: var(--shadow); border-radius: 16px; background: var(--card); }
-      .soft-card-blue{ box-shadow: var(--shadow); border-radius: 16px; background: var(--card-blue); }
-      .btn{ display:inline-flex; align-items:center; justify-content:center; gap:.5rem; font-weight:700; border-radius:12px; padding:.8rem 1.1rem; }
-      .btn-primary{ background:var(--brand); color:#fff; }
-      .btn-primary:hover{ background:var(--brand-2); }
-      .btn-ghost{ background:var(--btn-ghost-bg); color:#1F2A44; border:1px solid var(--btn-ghost-br); }
-      .badge-ghost{ background:var(--btn-ghost-bg); border:1px solid var(--btn-ghost-br); border-radius:12px; padding:.55rem .9rem; font-weight:600; }
-      .price-chip{ background:var(--chip); color:#fff; padding:.45rem .9rem; border-radius:999px; font-weight:800; }
-      .heart{ position:absolute; right:14px; top:14px; width:38px; height:38px; border-radius:999px; background:#fff; display:grid; place-items:center; box-shadow: 0 4px 12px rgba(0,0,0,.08); }
-      .nav a{ color:#2E3A59; }
-      .nav a:hover{ color:#111827; }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body class="min-h-full text-slate-800">
+
     <!-- HEADER -->
     <header style="background:var(--bg)">
-      <div class="max-w-[1140px] mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="container py-4 flex items-center justify-between">
         <div class="flex items-center gap-2">
           <i class="ri-flight-takeoff-fill text-2xl" style="color:var(--brand)"></i>
           <span class="text-2xl font-extrabold" style="color:#6F8AFF">workcango</span>
         </div>
         <nav class="hidden md:flex items-center gap-8 text-sm font-medium nav">
-          <a href="#">Atlas IA</a>
-          <div class="relative group"><button class="flex items-center gap-1">Marketplace <i class="ri-arrow-down-s-line"></i></button></div>
-          <a href="#">Let’s Grow</a><a href="#">Workademy</a><a href="#">Know us</a>
+          <a href="#" data-i18n="nav.atlas">Atlas IA</a>
+          <div class="relative group"><button class="flex items-center gap-1" data-i18n="nav.market">Marketplace <i class="ri-arrow-down-s-line"></i></button></div>
+          <a href="#" data-i18n="nav.grow">Let’s Grow</a><a href="#" data-i18n="nav.workademy">Workademy</a><a href="#" data-i18n="nav.know">Know us</a>
         </nav>
         <div class="flex items-center gap-3">
-          <a href="#" class="badge-ghost">Acceso</a>
-          <a href="#" class="btn btn-primary">Inscribirse</a>
+          <a href="#" class="badge-ghost" data-i18n="auth.login">Acceso</a>
+          <a href="#" class="btn btn-primary" data-i18n="auth.signup">Inscribirse</a>
         </div>
       </div>
     </header>
 
     <!-- HERO ROW -->
-    <section class="max-w-[1140px] mx-auto px-6 pt-4">
+    <section class="container pt-4">
       <div class="grid lg:grid-cols-12 gap-6">
         <!-- LEFT: Gallery with vertical thumbs -->
         <div class="lg:col-span-5 soft-card p-4">
           <div class="grid grid-cols-[64px,1fr] gap-4">
             <div class="flex flex-col gap-2">
-              <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=200&auto=format&fit=crop" class="w-16 h-16 object-cover rounded-xl border-2 border-transparent hover:border-[var(--brand)] cursor-pointer" alt="thumb1"/>
-              <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=200&auto=format&fit=crop" class="w-16 h-16 object-cover rounded-xl border-2 border-transparent hover:border-[var(--brand)] cursor-pointer" alt="thumb2"/>
-              <img src="https://images.unsplash.com/photo-1472289065668-ce650ac443d2?q=80&w=200&auto=format&fit=crop" class="w-16 h-16 object-cover rounded-xl border-2 border-transparent hover:border-[var(--brand)] cursor-pointer" alt="thumb3"/>
+              <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=200&auto=format&fit=crop" class="w-16 h-16 object-cover rounded-xl border-2 border-transparent hover:border-[var(--brand)] cursor-pointer thumb" alt="thumb1"/>
+              <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=200&auto=format&fit=crop" class="w-16 h-16 object-cover rounded-xl border-2 border-transparent hover:border-[var(--brand)] cursor-pointer thumb" alt="thumb2"/>
+              <img src="https://images.unsplash.com/photo-1472289065668-ce650ac443d2?q=80&w=200&auto=format&fit=crop" class="w-16 h-16 object-cover rounded-xl border-2 border-transparent hover:border-[var(--brand)] cursor-pointer thumb" alt="thumb3"/>
             </div>
             <div class="rounded-xl overflow-hidden">
               <img id="mainImg" src="https://images.unsplash.com/photo-1516245834210-c4c142787335?q=80&w=1400&auto=format&fit=crop" class="w-full h-full object-cover" alt="Hero"/>
@@ -75,50 +50,57 @@
         <!-- MIDDLE: Details -->
         <div class="lg:col-span-4">
           <div class="soft-card p-6">
-            <h2 class="text-xl font-extrabold mb-3">Detalles del servicio</h2>
+            <h2 class="text-xl font-extrabold mb-3" data-i18n="details.title">Detalles del servicio</h2>
             <ul class="text-sm space-y-2">
-              <li><span class="text-slate-500">Título de la página:</span> <span class="font-semibold">Lorem ipsum dolo</span></li>
-              <li><span class="text-slate-500">Nombre del servicio:</span> <span class="font-semibold">Lorem ipsum dolor sit amet.</span></li>
-              <li><span class="text-slate-500">Industria:</span> <span class="font-semibold">Empresa</span></li>
-              <li><span class="text-slate-500">Categoría:</span> <span class="font-semibold">Tecnología y Software/ Desarrollo web</span></li>
-              <li><span class="text-slate-500">El tiempo de entrega:</span> <span class="font-semibold">7–9 Days</span></li>
+              <li><span class="text-slate-500" data-i18n="details.pageTitleK">Título de la página:</span> <span class="font-semibold" data-i18n="details.pageTitleV">Lorem ipsum dolo</span></li>
+              <li><span class="text-slate-500" data-i18n="details.serviceNameK">Nombre del servicio:</span> <span class="font-semibold" data-i18n="details.serviceNameV">Lorem ipsum dolor sit amet.</span></li>
+              <li><span class="text-slate-500" data-i18n="details.industryK">Industria:</span> <span class="font-semibold" data-i18n="details.industryV">Empresa</span></li>
+              <li><span class="text-slate-500" data-i18n="details.categoryK">Categoría:</span> <span class="font-semibold"><span data-i18n="details.categoryV1">Tecnología y Software</span>/<span class="text-slate-500" data-i18n="details.categoryV2">Desarrollo web</span></span></li>
+              <li><span class="text-slate-500" data-i18n="details.deliveryK">El tiempo de entrega:</span> <span class="font-semibold" data-i18n="details.deliveryV">7–9 Days</span></li>
             </ul>
-            <p class="text-4xl font-extrabold tracking-tight mt-4">$100–200</p>
+            <p class="text-4xl font-extrabold tracking-tight mt-4" id="priceLabel">$100–200</p>
           </div>
         </div>
 
-        <!-- RIGHT: Favorite + Primary + Seller (blue card) exactly as mock -->
+        <!-- RIGHT: Favorite + Primary + Seller -->
         <div class="lg:col-span-3 flex flex-col gap-4">
-          <button class="btn btn-ghost w-full"><i class="ri-heart-3-line"></i> Marcar como favorito</button>
-          <button class="btn btn-primary w-full">Comprar ahora</button>
+          <button id="favBtn" class="btn btn-ghost w-full"><i class="ri-heart-3-line"></i> <span data-i18n="btn.favorite">Marcar como favorito</span></button>
+          <button id="buyBtn" class="btn btn-primary w-full" data-i18n="btn.buyNow">Comprar ahora</button>
           <div class="soft-card-blue p-5">
-            <h3 class="font-extrabold mb-3">Detalles del vendedor</h3>
+            <h3 class="font-extrabold mb-3" data-i18n="seller.title">Detalles del vendedor</h3>
             <div class="flex items-center gap-3">
               <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=200&auto=format&fit=crop" class="w-12 h-12 rounded-full object-cover" alt="avatar"/>
               <div>
                 <p class="font-semibold">James Anderson</p>
-                <p class="text-xs text-slate-500 flex items-center gap-1"><i class="ri-map-pin-2-line"></i> New York, NY • <i class="ri-star-fill text-yellow-500"></i> 5.0 (40)</p>
+                <p class="text-xs text-slate-500 flex items-center gap-1">
+                  <i class="ri-map-pin-2-line"></i> <span>New York, NY</span> • <i class="ri-star-fill text-yellow-500"></i> 5.0 <span class="text-slate-500">(40)</span>
+                </p>
               </div>
             </div>
-            <button class="btn btn-primary w-full mt-4" style="background:#6B86FF">Contact Seller</button>
+            <button id="contactBtn" class="btn btn-primary w-full mt-4" data-i18n="btn.contact">Contact Seller</button>
           </div>
         </div>
       </div>
     </section>
 
     <!-- DESCRIPTION -->
-    <section class="max-w-[1140px] mx-auto px-6 pt-6">
-      <h3 class="font-extrabold mb-2">Descripción del servicio:</h3>
-      <p class="text-slate-600 leading-7">Lorem ipsum dolor sit amet consectetur. Diam hac pellentesque libero tristique. Vitae adipiscing mattis nullam in eget volutpat auctor. Montes id nulla vivamus suspendisse arcu elementum facilisis nunc in. Consequat pulvinar nunc ac sed varius. Tortor gravida vulputate urna leo lorem tellus facilisis pulvinar non. Ut dictumst nibh feugiat nec mauris aliquam morbi vitae suspendisse. Nibh ornare egestas sollicitudin ac adipiscing cras vel. Adipiscing nibh id consectetur.</p>
+    <section class="container pt-6">
+      <h3 class="font-extrabold mb-2" data-i18n="desc.title">Descripción del servicio:</h3>
+      <p class="text-slate-600 leading-7" data-i18n="desc.text">
+        Lorem ipsum dolor sit amet consectetur. Diam hac pellentesque libero tristique. Vitae adipiscing mattis nullam in eget volutpat auctor.
+        Montes id nulla vivamus suspendisse arcu elementum facilisis nunc in. Consequat pulvinar nunc ac sed varius. Tortor gravida vulputate
+        urna leo lorem tellus facilisis pulvinar non. Ut dictumst nibh feugiat nec mauris aliquam morbi vitae suspendisse. Nibh ornare egestas
+        sollicitudin ac adipiscing cras vel. Adipiscing nibh id consectetur.
+      </p>
     </section>
 
     <!-- SUGGESTED -->
-    <section class="max-w-[1140px] mx-auto px-6 pt-8 pb-24">
-      <h3 class="text-xl font-extrabold mb-4">Servicios sugeridos</h3>
+    <section class="container pt-8 pb-24">
+      <h3 class="text-xl font-extrabold mb-4" data-i18n="suggested.title">Servicios sugeridos</h3>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- card template -->
         <article class="relative soft-card overflow-hidden">
-          <div class="heart"><i class="ri-heart-3-line text-rose-500"></i></div>
+          <button class="heart" aria-label="fav"><i class="ri-heart-3-line text-rose-500"></i></button>
           <div class="aspect-video"><img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover" alt="service"/></div>
           <div class="absolute right-4 bottom-24 price-chip">$100–200</div>
           <div class="p-5 space-y-2 bg-white">
@@ -130,14 +112,14 @@
               </div>
             </div>
             <div class="text-[12px] text-slate-500">
-              <p><span class="font-semibold text-slate-700">Industria:</span> Empresa</p>
-              <p><span class="font-semibold text-slate-700">Categoría:</span> Tecnología y Software/ <span class="text-slate-500">Desarrollo web</span></p>
+              <p><span class="font-semibold text-slate-700" data-i18n="card.industryK">Industria:</span> <span data-i18n="card.industryV">Empresa</span></p>
+              <p><span class="font-semibold text-slate-700" data-i18n="card.categoryK">Categoría:</span> <b data-i18n="details.categoryV1">Tecnología y Software</b> <span class="text-slate-500" data-i18n="details.categoryV2">/ Desarrollo web</span></p>
             </div>
           </div>
         </article>
 
         <article class="relative soft-card overflow-hidden">
-          <div class="heart"><i class="ri-heart-3-line text-rose-500"></i></div>
+          <button class="heart" aria-label="fav"><i class="ri-heart-3-line text-rose-500"></i></button>
           <div class="aspect-video"><img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover" alt="service"/></div>
           <div class="absolute right-4 bottom-24 price-chip">$100–200</div>
           <div class="p-5 space-y-2 bg-white">
@@ -149,14 +131,14 @@
               </div>
             </div>
             <div class="text-[12px] text-slate-500">
-              <p><span class="font-semibold text-slate-700">Industria:</span> Empresa</p>
-              <p><span class="font-semibold text-slate-700">Categoría:</span> Tecnología y Software/ <span class="text-slate-500">Desarrollo web</span></p>
+              <p><span class="font-semibold text-slate-700" data-i18n="card.industryK">Industria:</span> <span data-i18n="card.industryV">Empresa</span></p>
+              <p><span class="font-semibold text-slate-700" data-i18n="card.categoryK">Categoría:</span> <b data-i18n="details.categoryV1">Tecnología y Software</b> <span class="text-slate-500" data-i18n="details.categoryV2">/ Desarrollo web</span></p>
             </div>
           </div>
         </article>
 
         <article class="relative soft-card overflow-hidden">
-          <div class="heart"><i class="ri-heart-3-line text-rose-500"></i></div>
+          <button class="heart" aria-label="fav"><i class="ri-heart-3-line text-rose-500"></i></button>
           <div class="aspect-video"><img src="https://images.unsplash.com/photo-1472289065668-ce650ac443d2?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover" alt="service"/></div>
           <div class="absolute right-4 bottom-24 price-chip">$100–200</div>
           <div class="p-5 space-y-2 bg-white">
@@ -168,8 +150,8 @@
               </div>
             </div>
             <div class="text-[12px] text-slate-500">
-              <p><span class="font-semibold text-slate-700">Industria:</span> Empresa</p>
-              <p><span class="font-semibold text-slate-700">Categoría:</span> Tecnología y Software/ <span class="text-slate-500">Desarrollo web</span></p>
+              <p><span class="font-semibold text-slate-700" data-i18n="card.industryK">Industria:</span> <span data-i18n="card.industryV">Empresa</span></p>
+              <p><span class="font-semibold text-slate-700" data-i18n="card.categoryK">Categoría:</span> <b data-i18n="details.categoryV1">Tecnología y Software</b> <span class="text-slate-500" data-i18n="details.categoryV2">/ Desarrollo web</span></p>
             </div>
           </div>
         </article>
@@ -178,46 +160,48 @@
 
     <!-- FLOATING ACTIONS -->
     <div class="fixed bottom-6 right-6 z-50 flex gap-3">
-      <button class="w-12 h-12 rounded-full text-white grid place-items-center shadow-lg" style="background:#2B3674" aria-label="Soporte"><i class="ri-customer-service-2-line text-xl"></i></button>
+      <button class="fab" title="Soporte"><i class="ri-customer-service-2-line text-xl"></i></button>
+
+      <!-- CART FAB -->
       <div class="relative">
-        <button id="langBtn" class="w-12 h-12 rounded-full text-white grid place-items-center shadow-lg" style="background:#2B3674" aria-label="Idioma"><i class="ri-translate-2 text-xl"></i></button>
+        <button id="cartBtn" class="fab" title="Carrito"><i class="ri-shopping-cart-2-line text-xl"></i></button>
+        <span id="cartCount" class="cart-badge hidden">0</span>
+      </div>
+
+      <!-- LANG -->
+      <div class="relative">
+        <button id="langBtn" class="fab" title="Idioma"><i class="ri-translate-2 text-xl"></i></button>
         <div id="langMenu" class="hidden absolute bottom-14 right-0 bg-white rounded-xl shadow-lg p-2 w-56">
           <input id="searchLang" placeholder="Buscar idioma..." class="w-full border border-gray-300 rounded-md p-2 mb-2 text-sm"/>
           <ul id="langList" class="max-h-56 overflow-y-auto text-sm divide-y">
-            <li data-lang="es" class="px-2 py-2 hover:bg-gray-100 cursor-pointer">Español</li>
-            <li data-lang="en" class="px-2 py-2 hover:bg-gray-100 cursor-pointer">English</li>
-            <li data-lang="fr" class="px-2 py-2 hover:bg-gray-100 cursor-pointer">Français</li>
-            <li data-lang="pt" class="px-2 py-2 hover:bg-gray-100 cursor-pointer">Português</li>
-            <li data-lang="it" class="px-2 py-2 hover:bg-gray-100 cursor-pointer">Italiano</li>
-            <li data-lang="de" class="px-2 py-2 hover:bg-gray-100 cursor-pointer">Deutsch</li>
+            <li data-lang="es">Español</li>
+            <li data-lang="en">English</li>
+            <li data-lang="fr">Français</li>
+            <li data-lang="pt">Português</li>
+            <li data-lang="it">Italiano</li>
+            <li data-lang="de">Deutsch</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <script>
-      // Thumbs -> main
-      document.querySelectorAll('img[alt^="thumb"]').forEach(t=>t.addEventListener('click',()=>{
-        document.getElementById('mainImg').src=t.src.replace('w=200','w=1400');
-      }));
+    <!-- CART PANEL -->
+    <aside id="cartPanel" class="cart-panel hidden">
+      <div class="cart-header">
+        <h4 data-i18n="cart.title">Tu carrito</h4>
+        <button id="cartClose" class="cart-close"><i class="ri-close-line"></i></button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span data-i18n="cart.subtotal">Subtotal</span>
+          <strong id="cartSubtotal">$0.00</strong>
+        </div>
+        <button class="btn btn-primary w-full" id="checkoutBtn" data-i18n="cart.checkout">Proceder al pago</button>
+      </div>
+    </aside>
 
-      // Menú de idioma básico (sin traducción automática – puedo reactivar el diccionario i18n si lo quieres aquí)
-      const langBtn=document.getElementById('langBtn');
-      const langMenu=document.getElementById('langMenu');
-      const searchLang=document.getElementById('searchLang');
-      const langList=document.getElementById('langList');
-      langBtn.addEventListener('click',()=>langMenu.classList.toggle('hidden'));
-      searchLang.addEventListener('input',()=>{
-        const v=searchLang.value.toLowerCase();
-        langList.querySelectorAll('li').forEach(li=>{
-          li.style.display=li.textContent.toLowerCase().includes(v)?'':'none';
-        });
-      });
-      langList.querySelectorAll('li').forEach(li=>li.addEventListener('click',()=>{
-        localStorage.setItem('lang',li.dataset.lang);
-        langMenu.classList.add('hidden');
-      }));
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
 

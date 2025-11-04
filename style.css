@@ -1,0 +1,39 @@
+:root{
+  --bg:#EEF3F9; --ink:#101828; --muted:#667085;
+  --brand:#6B86FF; --brand-2:#7A92FF;
+  --chip:#2B3674; --btn-ghost-bg:#E8EFFF; --btn-ghost-br:#C8D6FF;
+  --card:#FFFFFF; --card-blue:#EFF4FF;
+  --shadow:0 6px 18px rgba(16,24,40,.06), 0 14px 36px rgba(16,24,40,.06);
+}
+html,body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
+.container{max-width:1140px;margin:0 auto;padding:0 1.5rem}
+.soft-card{ box-shadow: var(--shadow); border-radius: 16px; background: var(--card); }
+.soft-card-blue{ box-shadow: var(--shadow); border-radius: 16px; background: var(--card-blue); }
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:.5rem; font-weight:700; border-radius:12px; padding:.8rem 1.1rem; }
+.btn-primary{ background:var(--brand); color:#fff; }
+.btn-primary:hover{ background:var(--brand-2); }
+.btn-ghost{ background:var(--btn-ghost-bg); color:#1F2A44; border:1px solid var(--btn-ghost-br); }
+.badge-ghost{ background:var(--btn-ghost-bg); border:1px solid var(--btn-ghost-br); border-radius:12px; padding:.55rem .9rem; font-weight:600; }
+.price-chip{ background:var(--chip); color:#fff; padding:.45rem .9rem; border-radius:999px; font-weight:800; }
+.heart{ position:absolute; right:14px; top:14px; width:38px; height:38px; border-radius:999px; background:#fff; display:grid; place-items:center; box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+.nav a{ color:#2E3A59; } .nav a:hover{ color:#111827; }
+
+/* FABs */
+.fab{width:48px;height:48px;border-radius:999px;background:#2B3674;color:#fff;display:grid;place-items:center;box-shadow:0 10px 20px rgba(43,54,116,.25)}
+.cart-badge{position:absolute;top:-4px;right:-4px;background:#ef4444;color:#fff;border-radius:999px;font-size:12px;line-height:1;padding:3px 6px}
+
+/* Cart panel */
+.cart-panel{position:fixed;right:0;top:0;height:100dvh;width:360px;background:#fff;box-shadow:-10px 0 30px rgba(0,0,0,.08);z-index:60;display:flex;flex-direction:column}
+.cart-header{display:flex;align-items:center;justify-content:space-between;padding:16px 16px;border-bottom:1px solid #eef2f6}
+.cart-header h4{font-weight:800}
+.cart-close{width:36px;height:36px;border-radius:10px;background:#f1f5fe;color:#334155;display:grid;place-items:center}
+.cart-items{padding:12px 16px;flex:1;overflow:auto}
+.cart-item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #f1f5f9}
+.cart-item img{width:56px;height:56px;border-radius:10px;object-fit:cover}
+.cart-meta{flex:1}
+.qty{display:flex;align-items:center;gap:8px}
+.qty button{width:28px;height:28px;border-radius:8px;background:#eef2ff;color:#334155}
+.cart-footer{padding:16px;border-top:1px solid #eef2f6}
+.cart-total{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+
+/* Lang menu (hereda Tailwind inputs) */
